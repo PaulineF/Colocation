@@ -1,0 +1,49 @@
+<?php
+
+namespace Coloc\MoviesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Choices
+ *
+ * @ORM\Table(name="choice")
+ * @ORM\Entity(repositoryClass="Coloc\MoviesBundle\Repository\ChoicesRepository")
+ */
+class Choice
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="target_date", type="date")
+     */
+    private $targetDate;
+
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="film_id", type="string", length=255)
+     */
+    private $filmId;
+
+
+   
+}
+

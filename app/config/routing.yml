@@ -1,0 +1,10 @@
+coloc_movies:
+    resource: "@ColocMoviesBundle/Resources/config/routing.yml"
+    prefix:   /movies
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

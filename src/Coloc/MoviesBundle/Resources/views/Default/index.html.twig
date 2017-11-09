@@ -1,0 +1,18 @@
+ <table>
+    <thead>
+        <tr>
+            <th>Coloc</th>
+            <th>Film</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for choice in choices %}
+        <tr>
+            <td><a href="#">{{ choice.user }}</a></td>
+            <td>{{ choice.film }}</td>
+            <td>{{choice.targetDate | date("d/m/Y") }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
