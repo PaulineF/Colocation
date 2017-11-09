@@ -1,7 +1,0 @@
-coloc_movies_homepage:
-    path:     /
-    defaults: { _controller: ColocMoviesBundle:Default:index }
-
-coloc_movies_search:
-    path:     /search
-    defaults: { _controller: ColocMoviesBundle:Default:search }

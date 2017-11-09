@@ -1,6 +1,6 @@
-coloc_movies:
-    resource: "@ColocMoviesBundle/Resources/config/routing.yml"
-    prefix:   /movies
+coloc_movies_choice:
+    resource: "@ColocMoviesBundle/Controller/ChoiceController.php"
+    type:     annotation
 
 app:
     resource: '@AppBundle/Controller/'

@@ -107,7 +107,7 @@ class Choice
 
     public function getFilm()
     {
-        $response = Request::get('http://www.omdbapi.com/?apikey=8bb45b28&i='.$this->filmId)->raw_body;
+        $response = Request::get('http://www.omdbapi.com/?apikey=8bb45b28&i='.$this->filmId)->body;
         return $response;
     }
 
