@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Choice</h1>
+    <div><img src="{{choice.film.Poster}}"/></div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Date prévu</th>
+                <td>{% if choice.targetDate %}{{ choice.targetDate|date('d/m/Y') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Film</th>
+                <td>{{ choice.film.Title }}</td>
+            </tr>
+            <tr>
+                <th>Résumé</th>
+                <td>{{ choice.film.Plot }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('movies_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('movies_edit', { 'id': choice.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

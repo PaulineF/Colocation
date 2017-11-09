@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Choices list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Coloc</th>
+                <th>Film</th>                
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for choice in choices %}
+            <tr>
+                <td>{{ choice.user }}</td>
+                <td><a href="{{ path('movies_show', { 'id': choice.id }) }}">{{ choice.film.Title }}</a></td>
+                <td>{% if choice.targetDate %}{{ choice.targetDate|date('d/m/Y') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('movies_show', { 'id': choice.id }) }}">Voir</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('movies_edit', { 'id': choice.id }) }}">Editer</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('movies_new') }}">Ajoutes un choix</a>
+        </li>
+    </ul>
+{% endblock %}
