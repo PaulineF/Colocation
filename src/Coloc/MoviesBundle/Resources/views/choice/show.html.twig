@@ -3,10 +3,10 @@
 {% block body %}
     <h1>Choice</h1>
     <div><img src="{{choice.film.Poster}}"/></div>
-    <table>
+    <table >
         <tbody>
             <tr>
-                <th>Date prévu</th>
+                <th>Date prévue</th>
                 <td>{% if choice.targetDate %}{{ choice.targetDate|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>

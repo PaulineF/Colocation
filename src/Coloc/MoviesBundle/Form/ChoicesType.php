@@ -17,13 +17,16 @@ class ChoicesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('user')
-        ->add('targetDate', DateType::class, array(
+        $builder->add('targetDate', DateType::class, array(
             'widget' => 'single_text',
             'label' => 'Date'
         ))->add('filmId', HiddenType::class, array(
             'attr' => ['class' => 'searchFilm'],
-        ));
+        ))->add('filmTitle', TextType::class, [
+            'label' => 'Recherche du film',
+            'mapped' => false,
+            'attr' => ['onchange'=>"searchFilm(this)"],
+        ])->add('user');
     }
     
     /**

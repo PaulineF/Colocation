@@ -1,5 +1,5 @@
-function searchFilm(){
-	var title = $("#searchFilmTitle").val();
+function searchFilm(elt){
+	var title = $(elt).val();
 
 	if(title){
 		$.ajax("http://www.omdbapi.com/?apikey=8bb45b28&type=movie&s="+title)
@@ -15,18 +15,19 @@ function searchFilm(){
 				  	selectDom.append(option)
 				});
 
-				$(selectDom).attr("onchange", "selectMovie()");
-				$('#resultSearch').html(selectDom);
-
+				$(selectDom).attr("onchange", "selectMovie(this)");
+				$(selectDom).attr("class", "form-control");
+				$(elt).parent().append(selectDom);
+				selectMovie(elt);
 			}
 			
 		})
 	}else{
-		$('#resultSearch').html("");
+		$(elt).parent().find("select").remove();
 	}
 	
 }
 
-function selectMovie(){
-	$("#coloc_moviesbundle_choice_filmId").val($('#resultSearch').find("select").val());
+function selectMovie(elt){
+	$("#coloc_moviesbundle_choice_filmId").val($(elt).val());
 }

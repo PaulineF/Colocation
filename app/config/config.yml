@@ -38,6 +38,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['FormTemplate/bootstrap_4_horizontal_layout.html.twig']
     globals:
         omdbapiURL: '%omdbapiURL%'
         omdbapiAPIKey: '%omdbapiAPIKey%'
