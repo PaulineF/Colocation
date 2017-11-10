@@ -5,6 +5,12 @@
     {% endjavascripts %}
 {% endblock %}
 
+{% block stylesheets %}
+    {% stylesheets '@ColocMoviesBundle/Resources/public/css/*' %}
+        <link href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
 {% block body %}
     <h1>Choice creation</h1>
 

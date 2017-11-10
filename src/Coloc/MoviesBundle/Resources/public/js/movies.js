@@ -12,12 +12,16 @@ function searchFilm(elt){
 					var option = document.createElement("option");
 					option.value = value.imdbID;
 					option.innerHTML  = value.Title;
+					$(option).attr("data-thumbnail", value.Poster);
 				  	selectDom.append(option)
 				});
 
 				$(selectDom).attr("onchange", "selectMovie(this)");
-				$(selectDom).attr("class", "form-control");
+				$(selectDom).attr("class", "selectpicker");
 				$(elt).parent().append(selectDom);
+				$(selectDom).selectpicker({
+				    caretIcon: 'glyphicon glyphicon-menu-down'
+				  })			
 				selectMovie(elt);
 			}
 			
